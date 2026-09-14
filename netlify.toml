@@ -1,0 +1,110 @@
+# ============================================================================
+#  Nunes Chiropratique — configuration de deploiement Netlify
+#  Site 100 % statique : aucune etape de build, aucune dependance.
+# ============================================================================
+
+[build]
+  publish = "."
+  command = ""
+
+# ----------------------------------------------------------------------------
+#  Isolation du tunnel de vente
+#  Double verrou cote serveur, en plus de la balise meta robots et de robots.txt.
+#  Objectif : /bilan/ n'apparait jamais dans Google, meme si quelqu'un partage
+#  l'URL ou la publie ailleurs.
+# ----------------------------------------------------------------------------
+[[headers]]
+  for = "/bilan/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+
+[[headers]]
+  for = "/merci-contact/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+# ----------------------------------------------------------------------------
+#  En-tetes de securite (tout le site)
+# ----------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    # Le site n'utilise ni CDN, ni police externe, ni script tiers.
+    # Si vous ajoutez un pixel publicitaire, il faudra elargir cette regle.
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'"
+
+# Mise en cache longue des fichiers statiques (CSS, JS, images)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ----------------------------------------------------------------------------
+#  Redirections
+# ----------------------------------------------------------------------------
+
+# Anciennes URL WordPress -> nouvelles pages (301 = transfere le referencement).
+# A COMPLETER : listez ici toutes les anciennes adresses de nuneschiropratique.fr
+# pour ne perdre ni le referencement Google ni les liens deja partages.
+# Exemples courants d'un site WordPress :
+[[redirects]]
+  from = "/a-propos"
+  to = "/le-cabinet/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/infos-pratiques/#contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tarifs"
+  to = "/infos-pratiques/#tarifs"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/horaires"
+  to = "/infos-pratiques/#horaires"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/chiropratique"
+  to = "/la-chiropratique/"
+  status = 301
+  force = true
+
+# Anciennes adresses du tunnel heberge sur bilanchiropratique.netlify.app.
+# Si vous gardez ce domaine actif un temps, pointez-le vers /bilan/ pour que
+# les publicites deja en ligne continuent de fonctionner.
+[[redirects]]
+  from = "/bilan-chiropratique"
+  to = "/bilan/"
+  status = 301
+  force = true
+
+# Flux, pages d'administration et vestiges WordPress : plus rien a servir.
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feed"
+  to = "/"
+  status = 301
+  force = true

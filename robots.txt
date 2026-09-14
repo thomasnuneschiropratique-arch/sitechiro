@@ -1,0 +1,14 @@
+# Nunes Chiropratique — https://nuneschiropratique.fr
+#
+# Le tunnel de vente /bilan/ est reserve au trafic publicitaire :
+# il ne doit jamais apparaitre dans les resultats de recherche.
+# Cette exclusion est doublee d'une balise <meta name="robots" content="noindex">
+# dans chaque page du tunnel et d'un en-tete X-Robots-Tag (voir netlify.toml),
+# car robots.txt seul n'empeche pas l'indexation d'une URL connue.
+
+User-agent: *
+Disallow: /bilan/
+Disallow: /merci-contact/
+Allow: /
+
+Sitemap: https://nuneschiropratique.fr/sitemap.xml
