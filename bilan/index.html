@@ -4,587 +4,316 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ============================================================================
+<!-- ==========================================================================
      TUNNEL DE VENTE — PAGE PRIVEE
-     ----------------------------------------------------------------------------
-     Cette page n'est PAS accessible depuis le site vitrine :
-       · aucun lien n'y mène depuis l'accueil, le menu ou le pied de page ;
-       · elle est exclue de l'indexation (balise robots ci-dessous,
-         robots.txt et en-tete X-Robots-Tag dans netlify.toml) ;
-       · elle est absente du sitemap.xml ;
-       · elle n'a pas de menu : aucun lien ne renvoie vers la vitrine, afin que
-         le visiteur venu de la publicité reste dans le parcours.
-     On y accede uniquement par l'URL de vos annonces :
-       https://nuneschiropratique.fr/bilan/
-     ============================================================================ -->
+     Non accessible depuis le site vitrine :
+       · aucun lien entrant depuis l'accueil, le menu ou le pied de page ;
+       · noindex (balise ci-dessous + robots.txt + en-tete X-Robots-Tag) ;
+       · absente du sitemap.xml ;
+       · pas de menu : le visiteur venu de la publicite reste dans le parcours.
+     URL a utiliser dans vos annonces :
+       https://nuneschiropratique.fr/bilan/?src=nom-de-campagne
+     ========================================================================== -->
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <title>Bilan chiropratique complet — Cabinet Thomas Nunes, Toulouse</title>
 <meta name="description" content="Un bilan chiropratique complet à Toulouse : examen, explication de vos douleurs et plan d'action. Cabinet Thomas Nunes, 56 bd de Strasbourg.">
-<meta name="theme-color" content="#10332E">
+<meta name="theme-color" content="#1B4B48">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="stylesheet" href="/assets/css/funnel.css">
 </head>
-<body>
+<body class="funnel">
 <a class="skip-link" href="#reserver">Aller au formulaire de réservation</a>
-
-<!-- ======================= BANDEAU D'OFFRE ======================= -->
-<!-- AJUSTER : adaptez ce bandeau à l'offre réellement mise en avant dans vos annonces.
-     Ne promettez que ce que vous tenez : le message doit correspondre mot pour mot
-     à celui de la publicité, sinon le taux de conversion chute. -->
+<div class="swipe" aria-hidden="true"></div>
 <div class="offer-bar">
-  <span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-    Nouveaux patients — créneaux de bilan dédiés, en nombre limité chaque semaine
-  </span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Nouveaux patients — créneaux de bilan dédiés, en nombre limité chaque semaine</span>
 </div>
-
-<!-- ======================= EN-TETE MINIMAL (sans navigation) ======================= -->
 <header class="funnel-header">
   <div class="wrap funnel-header__inner">
-    <!-- Volontairement NON cliquable : pas de sortie vers la vitrine -->
     <span class="brand">
-      <img class="brand__mark" src="/assets/img/logo.svg" alt="" width="37" height="37">
+      <img class="brand__mark" src="/assets/img/logo.svg" alt="" width="40" height="40">
       <span class="brand__text">
-        <span class="brand__name">Nunes Chiropratique</span>
+        <span class="brand__name">Cabinet Chiropratique</span>
         <span class="brand__role">Thomas Nunes · Toulouse</span>
       </span>
     </span>
-    <a class="funnel-header__meta" href="tel:+33688755452" style="text-decoration:none">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>
-      06 88 75 54 52
-    </a>
+    <a class="funnel-header__meta" href="tel:+33688755452"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg> 06 88 75 54 52</a>
   </div>
 </header>
-
 <main>
 
-  <!-- ======================= HERO + FORMULAIRE ======================= -->
   <section class="funnel-hero">
     <div class="wrap funnel-split">
-
       <div>
         <div class="badge-row">
-          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>Toulouse centre — métro Jeanne d'Arc</span>
-          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>Sans ordonnance</span>
-          <span class="badge badge--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Réponse sous 24 h ouvrées</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg> Toulouse centre — métro Jeanne d'Arc</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg> Sans ordonnance</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Rappel sous 24 h ouvrées</span>
         </div>
 
-        <h1>Vous avez mal au dos depuis des mois&nbsp;— et personne ne vous a encore expliqué pourquoi</h1>
+        <h1 data-words>Vous avez mal au dos depuis des mois — et personne ne vous a encore expliqué pourquoi</h1>
 
-        <p class="lede">
-          Les anti-inflammatoires calment. Les massages soulagent. Puis ça revient, toujours au
-          même endroit. Le <strong>bilan chiropratique</strong> sert à répondre à une seule
-          question&nbsp;: <em>d'où vient réellement cette douleur, et que peut-on y faire&nbsp;?</em>
+        <p class="lede reveal" data-delay="1">
+          Les anti-inflammatoires calment. Les massages soulagent. Puis ça revient, toujours au même
+          endroit. Le <strong>bilan chiropratique</strong> sert à répondre à une seule question&nbsp;:
+          <em>d'où vient réellement cette douleur, et que peut-on y faire&nbsp;?</em>
         </p>
 
-        <ul class="checks" style="margin:1.75rem 0">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-            <span>Un <strong>examen complet</strong> — pas trois minutes de palpation</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-            <span>Une <strong>explication claire</strong> de ce qui se passe dans votre corps</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-            <span>Un <strong>plan d'action honnête</strong> — y compris «&nbsp;ce n'est pas pour moi, allez voir X&nbsp;»</span>
-          </li>
+        <ul class="checks reveal" data-delay="2" style="margin:2rem 0">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Un <strong>examen complet</strong> — pas trois minutes de palpation</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Une <strong>explication claire</strong> de ce qui se passe dans votre corps</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Un <strong>plan d'action honnête</strong> — y compris «&nbsp;ce n'est pas pour moi, allez voir X&nbsp;»</span></li>
         </ul>
 
-        <div class="hero__figure reveal" style="aspect-ratio:16/10;max-width:34rem">
-          <!-- REMPLACER : photo du praticien en consultation (format 16/10, ~1200x750px).
-               Sur une page publicitaire, une photo réelle du praticien augmente nettement
-               la conversion : privilégiez un visage, pas une image d'illustration. -->
-          <div class="ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20v-1.2A4.8 4.8 0 0 1 7.3 14h3.4a4.8 4.8 0 0 1 4.8 4.8V20"/><path d="M17 6.5l4.5 2-4.5 2"/></svg>
-            <span>Emplacement photo — Thomas Nunes en consultation</span>
-          </div>
-        </div>
+        <div style="max-width:36rem"><figure class="figure figure--wide figure--parallax"><div class="figure__fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg><span>Déposez <code>thomas-consultation.jpg</code> dans <code>assets/img/</code></span></div><img src="/assets/img/thomas-consultation.jpg" alt="Thomas Nunes en consultation, ajustement cervical au cabinet de Toulouse" width="1600" height="900" decoding="async" onerror="this.style.display=&quot;none&quot;"><div class="figure__mask"></div></figure></div>
       </div>
 
-      <!-- ---------- Carte de réservation ---------- -->
       <aside class="funnel-split__aside" id="reserver">
         <div class="booking-card">
           <div class="booking-card__head">
             <h2>Réserver mon bilan</h2>
-
-            <!-- ===================================================================
+            <!-- ==============================================================
                  A COMPLETER — OFFRE & PRIX
-                 Aucun tarif n'a été inventé. Si votre annonce met en avant un prix
-                 ou une remise, décommentez ce bloc et renseignez les montants —
-                 ils doivent être identiques à ceux de la publicité.
+                 Aucun tarif n'a ete invente. Si votre annonce met en avant un
+                 prix ou une remise, decommentez et renseignez — les montants
+                 doivent etre identiques a ceux de la publicite.
 
-                 <div class="booking-card__price">
-                   <ins>__ €</ins>
-                   <del>__ €</del>
-                 </div>
-                 =================================================================== -->
-
+                 <div class="booking-card__price"><ins>__ €</ins><del>__ €</del></div>
+                 ============================================================== -->
             <p>Bilan complet&nbsp;: environ 45 minutes au cabinet, 56 bd de Strasbourg.</p>
           </div>
-
           <div class="booking-card__body">
-            <!-- Formulaire Netlify : actif dès le déploiement sur Netlify.
-                 Les demandes arrivent dans l'onglet « Forms » du tableau de bord. -->
             <form class="form" name="bilan" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bilan/merci/">
               <input type="hidden" name="form-name" value="bilan">
-              <!-- Trace la provenance publicitaire : ajoutez ?src=meta-ads-oct
-                   à l'URL de vos annonces et récupérez la valeur ici. -->
-              <input type="hidden" name="source" value="tunnel-bilan">
+              <!-- Trace la campagne : ajoutez ?src=meta-octobre a l'URL de vos annonces -->
+              <input type="hidden" name="source" value="tunnel-bilan" data-src-field>
               <p hidden><label>Ne pas remplir&nbsp;: <input name="bot-field"></label></p>
 
               <div class="form__row">
-                <div class="field">
-                  <label for="b-prenom">Prénom <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="b-prenom" name="prenom" autocomplete="given-name" required>
-                </div>
-                <div class="field">
-                  <label for="b-nom">Nom <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="b-nom" name="nom" autocomplete="family-name" required>
-                </div>
+                <div class="field"><label for="b-prenom">Prénom <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="b-prenom" name="prenom" autocomplete="given-name" required></div>
+                <div class="field"><label for="b-nom">Nom <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="b-nom" name="nom" autocomplete="family-name" required></div>
               </div>
-
-              <div class="field">
-                <label for="b-tel">Téléphone <span class="req" aria-hidden="true">*</span></label>
+              <div class="field"><label for="b-tel">Téléphone <span class="req" aria-hidden="true">*</span></label>
                 <input type="tel" id="b-tel" name="telephone" autocomplete="tel" inputmode="tel" required>
-                <p class="hint">C'est par là que je vous rappelle pour fixer le créneau.</p>
-              </div>
-
-              <div class="field">
-                <label for="b-email">E-mail <span class="req" aria-hidden="true">*</span></label>
-                <input type="email" id="b-email" name="email" autocomplete="email" required>
-              </div>
-
-              <div class="field">
-                <label for="b-zone">Ce qui vous gêne le plus</label>
+                <p class="hint">C'est par là que je vous rappelle pour fixer le créneau.</p></div>
+              <div class="field"><label for="b-email">E-mail <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="b-email" name="email" autocomplete="email" required></div>
+              <div class="field"><label for="b-zone">Ce qui vous gêne le plus</label>
                 <select id="b-zone" name="zone">
-                  <option>Bas du dos / lombaires</option>
-                  <option>Nuque, cou, épaules</option>
-                  <option>Milieu du dos</option>
-                  <option>Maux de tête</option>
-                  <option>Douleur dans une jambe ou un bras</option>
-                  <option>Suivi sportif / prévention</option>
-                  <option>Grossesse</option>
-                  <option>Nourrisson ou enfant</option>
+                  <option>Bas du dos / lombaires</option><option>Nuque, cou, épaules</option>
+                  <option>Milieu du dos</option><option>Maux de tête</option>
+                  <option>Douleur dans une jambe ou un bras</option><option>Suivi sportif / prévention</option>
+                  <option>Grossesse</option><option>Nourrisson ou enfant</option>
                   <option>Autre / je ne sais pas</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="b-dispo">Vos disponibilités</label>
+                </select></div>
+              <div class="field"><label for="b-dispo">Vos disponibilités</label>
                 <select id="b-dispo" name="disponibilites">
-                  <option>Plutôt en matinée</option>
-                  <option>Plutôt sur la pause déjeuner</option>
-                  <option>Plutôt en fin de journée (après 17h)</option>
-                  <option>Le samedi matin</option>
+                  <option>Lundi, mardi ou jeudi — 11h à 14h</option>
+                  <option>Lundi, mardi ou jeudi — 17h à 20h</option>
+                  <option>Mercredi matin — 10h à 12h</option>
                   <option>Flexible</option>
-                </select>
-              </div>
-
-              <label class="consent">
-                <input type="checkbox" name="consentement" value="oui" required>
-                <span>
-                  J'accepte d'être recontacté au sujet de ma demande de rendez-vous.
-                  <a href="/confidentialite/" target="_blank" rel="noopener">Politique de confidentialité</a>.
-                </span>
-              </label>
-
-              <button class="btn btn--accent btn--lg btn--block" type="submit">
-                Demander mon bilan
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </button>
-
+                </select></div>
+              <label class="consent"><input type="checkbox" name="consentement" value="oui" required>
+                <span>J'accepte d'être recontacté au sujet de ma demande de rendez-vous.
+                <a href="/confidentialite/" target="_blank" rel="noopener">Politique de confidentialité</a>.</span></label>
+              <button class="btn btn--lg btn--block" type="submit">Demander mon bilan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
               <p style="text-align:center;font-size:var(--step--1);color:var(--ink-500);margin:0">
-                Ou réservez directement&nbsp;:
-                <a href="https://www.doctolib.fr/chiropracteur/toulouse/thomas-nunes" target="_blank" rel="noopener">agenda en ligne</a>
-              </p>
+                Ou réservez directement&nbsp;: <a href="https://www.doctolib.fr/chiropracteur/toulouse/thomas-nunes" target="_blank" rel="noopener">agenda en ligne</a></p>
             </form>
           </div>
         </div>
-
         <p style="margin-top:1rem;font-size:var(--step--1);color:var(--ink-500);text-align:center">
-          Aucun engagement. Vos coordonnées servent uniquement à fixer le rendez-vous.
-        </p>
+          Aucun engagement. Vos coordonnées servent uniquement à fixer le rendez-vous.</p>
       </aside>
     </div>
   </section>
 
-  <!-- ======================= POINTS DE DOULEUR ======================= -->
-  <section class="section section--white">
+  <section class="section section--paper2">
     <div class="wrap wrap--narrow">
-      <div class="section-head">
-        <p class="eyebrow">Est-ce que ça vous parle&nbsp;?</p>
-        <h2>Si vous vous reconnaissez dans deux de ces phrases, un bilan a du sens</h2>
-      </div>
-
+      <div class="section-head"><p class="eyebrow">Est-ce que ça vous parle&nbsp;?</p>
+        <h2>Si vous vous reconnaissez dans deux de ces phrases, un bilan a du sens</h2></div>
       <ul class="pain-list reveal">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-          <span>«&nbsp;J'ai mal depuis des mois, et j'ai fini par m'y habituer.&nbsp;»</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-          <span>«&nbsp;Je me réveille déjà raide, avant même d'avoir commencé la journée.&nbsp;»</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-          <span>«&nbsp;Ça va mieux deux jours après la séance, puis ça revient.&nbsp;»</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-          <span>«&nbsp;On m'a dit que c'était le stress, ou l'âge, et qu'il fallait vivre avec.&nbsp;»</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-          <span>«&nbsp;J'évite certains mouvements sans même y penser, par réflexe.&nbsp;»</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-          <span>«&nbsp;Personne ne m'a jamais expliqué <em>pourquoi</em> j'ai mal.&nbsp;»</span>
-        </li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>«&nbsp;J'ai mal depuis des mois, et j'ai fini par m'y habituer.&nbsp;»</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>«&nbsp;Je me réveille déjà raide, avant même d'avoir commencé la journée.&nbsp;»</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>«&nbsp;Ça va mieux deux jours après la séance, puis ça revient.&nbsp;»</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>«&nbsp;On m'a dit que c'était le stress, ou l'âge, et qu'il fallait vivre avec.&nbsp;»</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>«&nbsp;J'évite certains mouvements sans même y penser, par réflexe.&nbsp;»</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>«&nbsp;Personne ne m'a jamais expliqué <em>pourquoi</em> j'ai mal.&nbsp;»</span></li>
       </ul>
-
-      <p style="margin-top:2rem">
-        Une douleur qui dure n'est presque jamais un problème local. C'est le résultat d'une
-        mécanique déréglée quelque part — souvent à distance de l'endroit qui fait mal. Tant
-        qu'on ne remonte pas à cette cause, on soulage sans résoudre.
-      </p>
+      <p style="margin-top:2.5rem">Une douleur qui dure n'est presque jamais un problème local.
+      C'est le résultat d'une mécanique déréglée quelque part — souvent à distance de l'endroit qui
+      fait mal. Tant qu'on ne remonte pas à cette cause, on soulage sans résoudre.</p>
     </div>
   </section>
 
-  <!-- ======================= CE QUI EST INCLUS ======================= -->
   <section class="section">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">Le bilan, en détail</p>
-        <h2>45 minutes pour comprendre votre corps</h2>
-        <p class="lede">
-          Ce n'est pas une séance découverte expéditive. C'est un vrai temps clinique,
-          structuré, au terme duquel vous savez où vous en êtes.
-        </p>
-      </div>
-
-      <ul class="included reveal">
-        <li>
-          <span class="included__num">1</span>
-          <div>
-            <b>Entretien approfondi</b>
-            <span>
-              Votre histoire, vos antécédents, votre travail, votre sommeil, vos activités.
-              Ce que vous avez déjà essayé et ce que ça a donné. C'est là que se trouvent
-              la plupart des réponses.
-            </span>
-          </div>
-        </li>
-        <li>
-          <span class="included__num">2</span>
-          <div>
-            <b>Examen chiropratique complet</b>
-            <span>
-              Analyse posturale, tests de mobilité articulaire segment par segment, tests
-              neurologiques et orthopédiques ciblés. On identifie les zones qui ne bougent
-              plus — et celles qui compensent.
-            </span>
-          </div>
-        </li>
-        <li>
-          <span class="included__num">3</span>
-          <div>
-            <b>Explication, avec vos mots</b>
-            <span>
-              Je vous montre ce que j'ai trouvé et je vous explique le lien avec vos symptômes.
-              Sans jargon. Vous devez pouvoir le réexpliquer à quelqu'un d'autre en sortant.
-            </span>
-          </div>
-        </li>
-        <li>
-          <span class="included__num">4</span>
-          <div>
-            <b>Plan d'action chiffré</b>
-            <span>
-              Ce que la chiropratique peut faire dans votre cas, en combien de séances
-              approximativement, et à quoi ressemblerait le suivi. Un ordre de grandeur honnête,
-              pas un forfait à rallonge.
-            </span>
-          </div>
-        </li>
-        <li>
-          <span class="included__num">5</span>
-          <div>
-            <b>Premier ajustement si l'examen le permet</b>
-            <span>
-              Quand rien ne s'y oppose, on ne repousse pas&nbsp;: le travail commence dès
-              ce rendez-vous, avec la technique adaptée à votre corps.
-            </span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ======================= POUR QUI / PAS POUR QUI ======================= -->
-  <section class="section section--white">
     <div class="wrap">
-      <div class="section-head section-head--center">
-        <p class="eyebrow">Soyons clairs</p>
-        <h2>Ce bilan n'est pas pour tout le monde</h2>
-        <p class="lede">Autant le dire avant que vous ne réserviez plutôt qu'après.</p>
-      </div>
-
-      <div class="fit">
-        <div class="fit__col fit__col--yes">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-            C'est pour vous si…
-          </h3>
-          <ul>
-            <li>Votre douleur dure depuis plusieurs semaines ou revient régulièrement</li>
-            <li>Vous avez déjà essayé de soulager sans jamais comprendre la cause</li>
-            <li>Vous voulez une explication claire avant de vous engager dans un suivi</li>
-            <li>Vous êtes prêt à appliquer deux ou trois conseils simples au quotidien</li>
-            <li>Vous cherchez un praticien qui vous dise aussi quand s'arrêter</li>
-          </ul>
-        </div>
-
-        <div class="fit__col fit__col--no">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>
-            Ce n'est pas pour vous si…
-          </h3>
-          <ul>
-            <li>Vous cherchez uniquement un massage de détente</li>
-            <li>Vous voulez un soulagement immédiat et définitif en une séance</li>
-            <li>Votre situation relève d'une urgence médicale (voir l'encadré ci-dessous)</li>
-            <li>Vous n'avez pas 45 minutes à consacrer à un examen sérieux</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="note note--warn" style="margin-top:1.75rem">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 16H3l9-16z"/><path d="M12 9v4M12 16h.01"/></svg>
+      <div class="split split--top">
         <div>
-          <p>
-            <strong>Ce bilan ne remplace pas un avis médical.</strong> En cas de douleur brutale
-            et intense, de perte de sensibilité, de faiblesse musculaire, de fièvre ou après un
-            traumatisme, contactez le 15 (SAMU) ou votre médecin. Si votre situation nécessite un
-            examen complémentaire, je vous le dirai et je vous orienterai.
-          </p>
+          <p class="eyebrow">Le bilan, en détail</p>
+          <h2>45 minutes pour comprendre votre corps</h2>
+          <p class="lede">Ce n'est pas une séance découverte expéditive. C'est un vrai temps clinique,
+          structuré, au terme duquel vous savez où vous en êtes.</p>
+          <div style="margin-top:2.5rem"><figure class="figure figure--land figure--parallax"><div class="figure__fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg><span>Déposez <code>thomas-ajustement-cervical.jpg</code> dans <code>assets/img/</code></span></div><img src="/assets/img/thomas-ajustement-cervical.jpg" alt="Thomas Nunes réalisant un ajustement cervical sur une patiente" width="1000" height="1500" loading="lazy" decoding="async" onerror="this.style.display=&quot;none&quot;"><div class="figure__mask"></div></figure></div>
         </div>
+        <ul class="included reveal">
+          <li><span class="included__num">1</span><div><b>Entretien approfondi</b><span>Votre histoire, vos antécédents, votre travail, votre sommeil, vos activités. Ce que vous avez déjà essayé et ce que ça a donné. C'est là que se trouvent la plupart des réponses.</span></div></li>
+          <li><span class="included__num">2</span><div><b>Examen chiropratique complet</b><span>Analyse posturale, tests de mobilité articulaire segment par segment, tests neurologiques et orthopédiques ciblés. On identifie les zones qui ne bougent plus — et celles qui compensent.</span></div></li>
+          <li><span class="included__num">3</span><div><b>Explication, avec vos mots</b><span>Je vous montre ce que j'ai trouvé et j'explique le lien avec vos symptômes. Sans jargon. Vous devez pouvoir le réexpliquer à quelqu'un d'autre en sortant.</span></div></li>
+          <li><span class="included__num">4</span><div><b>Plan d'action chiffré</b><span>Ce que la chiropratique peut faire dans votre cas, en combien de séances approximativement, et à quoi ressemblerait le suivi. Un ordre de grandeur honnête, pas un forfait à rallonge.</span></div></li>
+          <li><span class="included__num">5</span><div><b>Premier ajustement si l'examen le permet</b><span>Quand rien ne s'y oppose, on ne repousse pas : le travail commence dès ce rendez-vous, avec la technique adaptée à votre corps.</span></div></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ======================= LE PRATICIEN ======================= -->
-  <section class="section section--brand">
-    <div class="wrap split">
-      <div class="hero__figure reveal" style="aspect-ratio:1/1;max-width:26rem">
-        <!-- REMPLACER : portrait de Thomas Nunes (format carré, ~900x900px) -->
-        <div class="ph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1.5A5.5 5.5 0 0 1 9.5 14h5a5.5 5.5 0 0 1 5.5 5.5V21"/></svg>
-          <span>Emplacement photo — portrait du praticien</span>
-        </div>
+  <section class="section section--paper2">
+    <div class="wrap">
+      <div class="section-head section-head--center"><p class="eyebrow">Soyons clairs</p>
+        <h2>Ce bilan n'est pas pour tout le monde</h2>
+        <p class="lede">Autant le dire avant que vous ne réserviez plutôt qu'après.</p></div>
+      <div class="fit">
+        <div class="fit__col fit__col--yes"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg> C'est pour vous si…</h3><ul>
+          <li>Votre douleur dure depuis plusieurs semaines ou revient régulièrement</li>
+          <li>Vous avez déjà essayé de soulager sans jamais comprendre la cause</li>
+          <li>Vous voulez une explication claire avant de vous engager dans un suivi</li>
+          <li>Vous êtes prêt à appliquer deux ou trois conseils simples au quotidien</li>
+          <li>Vous cherchez un praticien qui vous dise aussi quand s'arrêter</li></ul></div>
+        <div class="fit__col fit__col--no"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg> Ce n'est pas pour vous si…</h3><ul>
+          <li>Vous cherchez uniquement un massage de détente</li>
+          <li>Vous voulez un soulagement immédiat et définitif en une séance</li>
+          <li>Votre situation relève d'une urgence médicale (voir ci-dessous)</li>
+          <li>Vous n'avez pas 45 minutes à consacrer à un examen sérieux</li></ul></div>
       </div>
+      <div class="note note--warn" style="margin-top:2rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 16H3l9-16z"/><path d="M12 9v4M12 16h.01"/></svg><div><p><strong>Ce bilan ne remplace
+      pas un avis médical.</strong> En cas de douleur brutale et intense, de perte de sensibilité,
+      de faiblesse musculaire, de fièvre ou après un traumatisme, contactez le 15 (SAMU) ou votre
+      médecin. Si votre situation nécessite un examen complémentaire, je vous le dirai et je vous
+      orienterai.</p></div></div>
+    </div>
+  </section>
 
-      <div>
-        <p class="eyebrow">Qui vous reçoit</p>
-        <h2>Thomas Nunes, chiropracteur à Toulouse</h2>
-        <p>
-          Je reçois au 56 boulevard de Strasbourg, en plein centre de Toulouse. Ma pratique
-          repose sur une idée simple&nbsp;: un patient qui comprend son corps va mieux, plus vite,
-          et plus longtemps.
-        </p>
-        <p>
-          Concrètement, ça veut dire que j'examine avant d'ajuster, que j'explique ce que je
-          trouve, et que je vous dis quand vous n'avez plus besoin de revenir. Si votre situation
-          ne relève pas de la chiropratique, je vous le dirai dès ce premier rendez-vous.
-        </p>
-        <!-- A COMPLETER : ajoutez ici votre diplôme, votre école et votre année
-             d'obtention. Sur une page publicitaire, c'est l'élément de réassurance
-             le plus efficace — mais il doit être exact. -->
-        <ul class="checks" style="margin-top:1.5rem">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-            <span>Consultations en français et en anglais</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-            <span>Du lundi au vendredi 9h–20h, samedi 9h–12h</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-            <span>Facture remise à chaque séance pour votre mutuelle</span>
-          </li>
-        </ul>
+  <section class="section section--brand">
+    <div class="wrap">
+      <div class="split split--top">
+        <div><figure class="figure figure--portrait figure--parallax"><div class="figure__fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg><span>Déposez <code>thomas-portrait-ajustement.jpg</code> dans <code>assets/img/</code></span></div><img src="/assets/img/thomas-portrait-ajustement.jpg" alt="Thomas Nunes, chiropracteur à Toulouse, pendant un ajustement" width="1000" height="1250" loading="lazy" decoding="async" onerror="this.style.display=&quot;none&quot;"><div class="figure__mask"></div></figure></div>
+        <div>
+          <p class="eyebrow">Qui vous reçoit</p>
+          <h2>Thomas Nunes, chiropracteur à Toulouse</h2>
+          <p>Je reçois au 56 boulevard de Strasbourg, en plein centre de Toulouse. Ma pratique repose
+          sur une idée simple&nbsp;: un patient qui comprend son corps va mieux, plus vite, et plus
+          longtemps.</p>
+          <p>Concrètement, j'examine avant d'ajuster, j'explique ce que je trouve, et je vous dis
+          quand vous n'avez plus besoin de revenir. Si votre situation ne relève pas de la
+          chiropratique, je vous le dirai dès ce premier rendez-vous.</p>
+          <!-- A COMPLETER : votre diplome, votre ecole, votre annee d'obtention.
+               Sur une page publicitaire, c'est l'element de reassurance le plus
+               efficace — mais il doit etre exact. -->
+          <ul class="checks" style="margin-top:2rem">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Consultations en français et en anglais</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Lundi, mardi, jeudi 11h–14h et 17h–20h · mercredi 10h–12h</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Facture remise à chaque séance pour votre mutuelle</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!--
-  ========================================================================
-  TEMOIGNAGES — SECTION PRETE, VOLONTAIREMENT DESACTIVEE
-  ------------------------------------------------------------------------
-  Aucun avis n'a été inventé. Sur un tunnel publicitaire, les témoignages
-  sont l'élément le plus rentable : collez ici 3 avis réels (Doctolib,
-  Google, e-mail patient), prénom seul, avec l'accord de la personne.
-  Publier de faux avis est interdit (art. L121-4 du Code de la consommation).
-  Retirez ce commentaire pour activer la section.
-  ========================================================================
+  ======================================================================
+  AVIS GOOGLE — SECTION PRETE, EN ATTENTE DE VOS VRAIS AVIS
+  Sur un tunnel publicitaire, les temoignages sont l'element le plus
+  rentable. Collez 3 avis Google reels (prenom seul) et retirez ce
+  commentaire. Publier de faux avis est interdit (art. L121-4).
+  ======================================================================
   <section class="section">
     <div class="wrap">
-      <div class="section-head section-head--center">
-        <p class="eyebrow">Ils sont passés par là</p>
-        <h2>Ce qu'en disent mes patients</h2>
-      </div>
+      <div class="section-head section-head--center"><p class="eyebrow">Avis Google</p>
+        <h2>Ce qu'en disent mes patients</h2></div>
       <div class="grid grid--3">
         <figure class="quote reveal">
-          <div class="quote__stars" aria-label="5 étoiles sur 5">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9L12 2z"/></svg>
-          </div>
-          <blockquote>Collez ici un avis réel, mot pour mot.</blockquote>
-          <figcaption><b>Prénom</b>Motif de consultation</figcaption>
+          <div class="quote__stars" aria-label="5 etoiles sur 5">STARS</div>
+          <blockquote>Collez ici un avis Google reel.</blockquote>
+          <figcaption><b>Prenom</b>Avis Google</figcaption>
         </figure>
       </div>
     </div>
   </section>
   -->
 
-  <!-- ======================= OBJECTIONS / FAQ ======================= -->
-  <section class="section section--white">
+  <section class="section section--paper2">
     <div class="wrap wrap--narrow">
-      <div class="section-head section-head--center">
-        <p class="eyebrow">Avant de réserver</p>
-        <h2>Les questions qu'on me pose toujours</h2>
-      </div>
-
+      <div class="section-head section-head--center"><p class="eyebrow">Avant de réserver</p>
+        <h2>Les questions qu'on me pose toujours</h2></div>
       <div class="faq" data-accordion>
-        <details open>
-          <summary>Est-ce que ça fait mal&nbsp;?</summary>
-          <div class="faq__body">
-            <p>
-              Un ajustement n'est pas censé être douloureux. Le «&nbsp;craquement&nbsp;» que
-              certains entendent est un phénomène gazeux articulaire, sans gravité — et il n'est
-              pas indispensable&nbsp;: il existe des techniques sans bruit ni mouvement rapide,
-              que j'utilise systématiquement chez les nourrissons, les femmes enceintes et les
-              personnes qui préfèrent cette approche.
-            </p>
-            <p>
-              Dans les 24 à 48&nbsp;heures suivant un premier rendez-vous, de légères courbatures
-              sont possibles, comme après une séance de sport.
-            </p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Faut-il une ordonnance&nbsp;?</summary>
-          <div class="faq__body">
-            <p>
-              Non, la chiropratique est en accès direct. Si vous avez des radios, une IRM ou des
-              comptes rendus en lien avec votre problème, apportez-les&nbsp;: c'est précieux pour
-              le bilan.
-            </p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Combien de séances vais-je devoir faire&nbsp;?</summary>
-          <div class="faq__body">
-            <p>
-              C'est précisément l'objet du bilan. Je ne peux pas vous donner un chiffre honnête
-              avant de vous avoir examiné — et je me méfie de quiconque le fait. À la fin du
-              rendez-vous, vous aurez un ordre de grandeur réaliste, et vous serez libre de vous
-              arrêter là.
-            </p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Est-ce remboursé&nbsp;?</summary>
-          <div class="faq__body">
-            <p>
-              Pas par l'Assurance Maladie. En revanche, beaucoup de mutuelles prévoient un forfait
-              annuel pour la chiropratique&nbsp;: une facture vous est remise à chaque séance,
-              vérifiez votre contrat.
-            </p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Je suis enceinte / mon bébé a quelques semaines&nbsp;: c'est possible&nbsp;?</summary>
-          <div class="faq__body">
-            <p>
-              Oui, avec des techniques adaptées. Chez le nourrisson, il s'agit de pressions très
-              légères, sans aucun mouvement rapide, réalisées près du parent ou dans ses bras.
-              Chez la femme enceinte, le positionnement et les techniques sont adaptés au terme.
-            </p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Comment se passe la suite après le formulaire&nbsp;?</summary>
-          <div class="faq__body">
-            <p>
-              Je vous rappelle sous 24&nbsp;heures ouvrées pour caler un créneau qui vous
-              convient. Pas de relances commerciales&nbsp;: vos coordonnées servent uniquement à
-              fixer ce rendez-vous.
-            </p>
-          </div>
-        </details>
+        <details open><summary>Est-ce que ça fait mal&nbsp;?</summary><div class="faq__body">
+          <p>Un ajustement n'est pas censé être douloureux. Le «&nbsp;craquement&nbsp;» est un
+          phénomène gazeux articulaire, sans gravité — et il n'est pas indispensable&nbsp;: il existe
+          des techniques sans bruit ni mouvement rapide, que j'utilise systématiquement chez les
+          nourrissons, les femmes enceintes et les personnes qui préfèrent cette approche.</p>
+          <p>Dans les 24 à 48&nbsp;heures suivant un premier rendez-vous, de légères courbatures sont
+          possibles, comme après une séance de sport.</p></div></details>
+        <details><summary>Faut-il une ordonnance&nbsp;?</summary><div class="faq__body">
+          <p>Non, la chiropratique est en accès direct. Si vous avez des radios, une IRM ou des
+          comptes rendus en lien avec votre problème, apportez-les&nbsp;: c'est précieux pour le bilan.</p></div></details>
+        <details><summary>Combien de séances vais-je devoir faire&nbsp;?</summary><div class="faq__body">
+          <p>C'est précisément l'objet du bilan. Je ne peux pas donner un chiffre honnête avant de
+          vous avoir examiné — et je me méfie de quiconque le fait. À la fin du rendez-vous, vous
+          aurez un ordre de grandeur réaliste, et vous serez libre de vous arrêter là.</p></div></details>
+        <details><summary>Est-ce remboursé&nbsp;?</summary><div class="faq__body">
+          <p>Pas par l'Assurance Maladie. En revanche, beaucoup de mutuelles prévoient un forfait
+          annuel pour la chiropratique&nbsp;: une facture vous est remise à chaque séance, vérifiez
+          votre contrat.</p></div></details>
+        <details><summary>Je suis enceinte / mon bébé a quelques semaines&nbsp;: c'est possible&nbsp;?</summary><div class="faq__body">
+          <p>Oui, avec des techniques adaptées. Chez le nourrisson, il s'agit de pressions très
+          légères, sans aucun mouvement rapide, réalisées près du parent ou dans ses bras. Chez la
+          femme enceinte, le positionnement et les techniques sont adaptés au terme.</p></div></details>
+        <details><summary>Comment se passe la suite après le formulaire&nbsp;?</summary><div class="faq__body">
+          <p>Je vous rappelle sous 24&nbsp;heures ouvrées pour caler un créneau qui vous convient.
+          Pas de relances commerciales&nbsp;: vos coordonnées servent uniquement à fixer ce
+          rendez-vous.</p></div></details>
       </div>
     </div>
   </section>
 
-  <!-- ======================= DERNIER APPEL ======================= -->
-  <section class="section section--tight">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <h2>Arrêtons de deviner. Faisons le point.</h2>
-        <p>
-          45 minutes pour comprendre ce qui se passe dans votre dos, et savoir enfin quoi en
-          faire. Cabinet Thomas Nunes, 56 boulevard de Strasbourg, Toulouse.
-        </p>
-        <div class="btn-row">
-          <a class="btn btn--accent btn--lg" href="#reserver">Réserver mon bilan</a>
-          <a class="btn btn--ghost btn--lg" href="tel:+33688755452" style="--btn-fg:#fff;--btn-border:rgba(255,255,255,.4)">Ou appelez : 06 88 75 54 52</a>
-        </div>
-
-        <div class="slots slots--on-dark" style="margin-top:2.25rem;text-align:left;max-width:36rem;margin-inline:auto">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
-          <span class="slots__label">
-            <strong>Agenda limité.</strong> Les créneaux de bilan sont dédiés aux nouveaux
-            patients et s'ajoutent aux consultations de suivi&nbsp;: leur nombre est
-            forcément restreint chaque semaine.
-          </span>
-        </div>
+  <section class="section">
+    <div class="wrap"><div class="cta-band reveal">
+      <h2>Arrêtons de deviner. Faisons le point.</h2>
+      <p>45 minutes pour comprendre ce qui se passe dans votre dos, et savoir enfin quoi en faire.
+      Cabinet Thomas Nunes, 56 boulevard de Strasbourg, Toulouse.</p>
+      <div class="btn-row">
+        <a class="btn btn--light btn--lg" href="#reserver" data-magnetic>Réserver mon bilan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--outline-light btn--lg" href="tel:+33688755452">Ou appelez : 06 88 75 54 52</a>
       </div>
-    </div>
+      <div class="slots" style="margin-top:2.5rem;text-align:left;max-width:37rem;margin-inline:auto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg><span class="slots__label"><strong>Agenda limité.</strong> Le cabinet reçoit sur des
+        plages horaires restreintes — lundi, mardi et jeudi de 11h à 14h et de 17h à 20h, mercredi
+        de 10h à 12h. Les créneaux de bilan s'ajoutent aux consultations de suivi&nbsp;: leur nombre
+        est forcément limité chaque semaine.</span>
+      </div>
+    </div></div>
   </section>
 
 </main>
-
-<!-- ======================= PIED DE PAGE MINIMAL (aucun lien vers la vitrine) ======================= -->
 <footer class="funnel-footer">
   <div class="wrap funnel-footer__inner">
     <p style="margin:0">© <span data-year>2026</span> Cabinet Chiropratique Thomas Nunes — 56 bd de Strasbourg, 31000 Toulouse</p>
-    <ul style="display:flex;gap:1.25rem;list-style:none;margin:0;padding:0">
+    <ul style="display:flex;gap:1.5rem;list-style:none;margin:0;padding:0">
       <li><a href="/mentions-legales/">Mentions légales</a></li>
       <li><a href="/confidentialite/">Confidentialité</a></li>
     </ul>
   </div>
 </footer>
-
-<!-- ======================= CTA COLLANT (mobile) ======================= -->
 <div class="funnel-sticky">
   <div class="funnel-sticky__inner">
-    <div class="funnel-sticky__text">
-      <b>Bilan chiropratique</b>
-      <span>45 min · Toulouse centre</span>
-    </div>
-    <a class="btn btn--accent" href="#reserver">Réserver</a>
+    <div class="funnel-sticky__text"><b>Bilan chiropratique</b><span>45 min · Toulouse centre</span></div>
+    <a class="btn" href="#reserver">Réserver</a>
   </div>
 </div>
-
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

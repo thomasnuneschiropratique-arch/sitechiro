@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 124" role="img" aria-label="Emblème du Cabinet Chiropratique Thomas Nunes">
+  <defs>
+    <linearGradient id="nerf" x1="100" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2A6360"/>
+      <stop offset=".55" stop-color="#4E8C87"/>
+      <stop offset="1" stop-color="#C7D4D2"/>
+    </linearGradient>
+    <linearGradient id="nerfG" x1="100" y1="0" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2A6360"/>
+      <stop offset=".55" stop-color="#4E8C87"/>
+      <stop offset="1" stop-color="#C7D4D2"/>
+    </linearGradient>
+    <linearGradient id="rachis" x1="100" y1="30" x2="100" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3C7C77"/>
+      <stop offset="1" stop-color="#1F4F4C"/>
+    </linearGradient>
+    <linearGradient id="petale" x1="100" y1="6" x2="100" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#BACFCC"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke-linecap="round">
+    <!-- Ramifications nerveuses, tressées, s'éclaircissant vers l'extérieur -->
+    <g stroke-width="1.5" opacity=".95">
+      <path stroke="url(#nerf)"  d="M100 62c20-3 30 12 46 13s26-10 44-11"/>
+      <path stroke="url(#nerf)"  d="M100 70c18 5 32-7 48-6s26 12 42 10"/>
+      <path stroke="url(#nerf)"  d="M100 78c22 1 30 14 48 13s24-12 42-12"/>
+      <path stroke="url(#nerfG)" d="M100 62c-20-3-30 12-46 13s-26-10-44-11"/>
+      <path stroke="url(#nerfG)" d="M100 70c-18 5-32-7-48-6s-26 12-42 10"/>
+      <path stroke="url(#nerfG)" d="M100 78c-22 1-30 14-48 13s-24-12-42-12"/>
+    </g>
+    <g stroke-width="1" opacity=".55">
+      <path stroke="url(#nerf)"  d="M100 66c24-6 34 18 54 18s28-14 44-13"/>
+      <path stroke="url(#nerfG)" d="M100 66c-24-6-34 18-54 18s-28-14-44-13"/>
+      <path stroke="url(#nerf)"  d="M100 74c22 8 36-10 52-8s28 14 46 9"/>
+      <path stroke="url(#nerfG)" d="M100 74c-22 8-36-10-52-8s-28 14-46 9"/>
+    </g>
+
+    <!-- Côtes : anneaux enveloppant le rachis, s'élargissant vers le bas -->
+    <g stroke="#2A6360" stroke-width="1.9">
+      <path d="M100 62h-13a5.5 5.5 0 0 0 0 11h26a5.5 5.5 0 0 0 0-11h-13"/>
+      <path d="M100 74h-17a5.5 5.5 0 0 0 0 11h34a5.5 5.5 0 0 0 0-11h-17"/>
+      <path d="M100 86h-21a5.5 5.5 0 0 0 0 11h42a5.5 5.5 0 0 0 0-11h-21"/>
+      <path d="M100 98h-24a5.5 5.5 0 0 0 0 11h48a5.5 5.5 0 0 0 0-11h-24"/>
+    </g>
+  </g>
+
+  <!-- Rachis central -->
+  <path fill="url(#rachis)" d="M97.6 30h4.8l.8 84h-6.4z"/>
+
+  <!-- Éclosion : deux pétales pâles s'ouvrant au sommet -->
+  <g fill="url(#petale)">
+    <path d="M99 31c-8-3-16-8-18-14-1-4 2-7 6-5 6 3 11 11 12 19z"/>
+    <path d="M101 31c8-3 16-8 18-14 1-4-2-7-6-5-6 3-11 11-12 19z"/>
+    <path d="M100 29c-4-5-6-13-4-19 2-4 6-4 8 0 3 6 1 15-4 19z" opacity=".9"/>
+  </g>
+  <ellipse cx="100" cy="30" rx="4" ry="2.7" fill="#2A6360"/>
+</svg>

@@ -1,8 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Nunes Chiropratique">
-  <circle cx="32" cy="32" r="32" fill="#10332E"/>
-  <path d="M32 13c-4.2 0-7 2.6-7 5.9 0 2.5 1.6 4 3 5.4 1.5 1.5 2.6 2.6 2.6 4.4s-1.1 2.9-2.6 4.4c-1.4 1.4-3 2.9-3 5.4 0 2.5 1.6 4 3 5.4 1.5 1.5 2.6 2.6 2.6 4.4 0 1.9-1.2 3.2-2.8 4.3"
-        fill="none" stroke="#2B8A78" stroke-width="3.4" stroke-linecap="round"/>
-  <circle cx="32" cy="13" r="4.4" fill="#C2703F"/>
-  <path d="M20 27.5c-2.6 1.3-4.3 3.2-4.3 5.2M44 27.5c2.6 1.3 4.3 3.2 4.3 5.2M20 40c-2.6 1.3-4.3 3.2-4.3 5.2M44 40c2.6 1.3 4.3 3.2 4.3 5.2"
-        fill="none" stroke="#2B8A78" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cabinet Chiropratique Thomas Nunes">
+  <g fill="none" stroke="#2A6360" stroke-linecap="round">
+    <g stroke-width="1.6" opacity=".5">
+      <path d="M32 26c9-2 13 6 21 6M32 33c-9 2-13-6-21-6M32 40c9 1 13 7 21 6M32 47c-9-1-13-7-21-6"/>
+    </g>
+    <g stroke-width="2.6">
+      <path d="M32 24h-6a4 4 0 0 0 0 8h12a4 4 0 0 0 0-8h-6"/>
+      <path d="M32 34h-8.5a4 4 0 0 0 0 8h17a4 4 0 0 0 0-8H32"/>
+      <path d="M32 44h-11a4 4 0 0 0 0 8h22a4 4 0 0 0 0-8H32"/>
+    </g>
+  </g>
+  <path fill="#1F4F4C" d="M30.4 12h3.2l.5 44h-4.2z"/>
+  <path fill="#8FB3AE" d="M31.4 13c-5-2-9-5-10-9 0-2 2-3 4-2 4 2 6 7 6 11zM32.6 13c5-2 9-5 10-9 0-2-2-3-4-2-4 2-6 7-6 11z"/>
+  <ellipse cx="32" cy="12.5" rx="2.8" ry="2" fill="#2A6360"/>
 </svg>

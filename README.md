@@ -1,247 +1,230 @@
-# Nunes Chiropratique — site unifié
+# Cabinet Chiropratique Thomas Nunes — site unifié
 
-Fusion du **site vitrine** (`nuneschiropratique.fr`, WordPress) et du **tunnel de vente**
-(`bilanchiropratique.netlify.app`) en un seul site statique, avec une identité visuelle
-commune.
+Fusion du site vitrine (`nuneschiropratique.fr`) et du tunnel de vente
+(`bilanchiropratique.netlify.app`) en un seul site statique.
 
-Site 100 % statique : HTML, CSS et un petit fichier JavaScript. **Aucune base de données,
-aucun build, aucune dépendance** — donc rien à mettre à jour, rien qui casse, et un
-chargement quasi instantané.
+HTML, CSS et un fichier JavaScript. **Aucun build, aucune dépendance, aucune base de
+données.** Polices auto-hébergées, aucune requête vers un service tiers.
 
 ---
 
-## ⚠️ À lire en premier
+## 🔴 Ce qu'il me faut de votre part
 
-Les deux sites d'origine **n'ont pas pu être consultés** : la politique réseau de
-l'environnement où ce travail a été réalisé bloque `nuneschiropratique.fr` et
-`bilanchiropratique.netlify.app` (erreur 403 du proxy de sortie).
+### 1. Les photos (4 fichiers)
 
-Les informations vérifiables ont été récupérées via des sources publiques (annuaires,
-Doctolib) :
+Les emplacements sont déjà codés dans les pages. Déposez les fichiers dans
+`assets/img/` **avec exactement ces noms** et ils apparaîtront automatiquement.
+Tant qu'ils sont absents, un bloc dégradé s'affiche à la place — le site ne casse pas.
 
-| Donnée | Valeur retenue |
-|---|---|
-| Cabinet | Cabinet Chiropratique Thomas Nunes |
-| Adresse | 56 boulevard de Strasbourg, 31000 Toulouse |
-| Téléphone | 06 88 75 54 52 |
-| Horaires | Lun–Ven 9h–20h · Sam 9h–12h |
-| Prise de RDV | Doctolib |
-| Langues | Français, anglais |
-| Paiement | CB, espèces, chèque |
-| Accroche | « Retrouvez un corps qui fonctionne à son plein potentiel » |
+| Nom du fichier | Photo | Format conseillé |
+|---|---|---|
+| `cabinet-salle-de-soin.jpg` | La salle avec les trois tables | paysage, ~1600×1000 |
+| `thomas-consultation.jpg` | Vous en chemise blanche, devant la fenêtre | paysage, ~1600×900 |
+| `thomas-ajustement-cervical.jpg` | Vous en pull marine, ajustement cervical | portrait, ~1000×1500 |
+| `thomas-portrait-ajustement.jpg` | Vous en chemise blanche, vue de dessus | portrait, ~1000×1250 |
 
-**Deux conséquences à traiter :**
+**Comment les déposer sans ligne de commande :** sur GitHub, ouvrez le dossier
+`assets/img/` → bouton **Add file** → **Upload files** → glissez les 4 photos →
+**Commit changes**.
 
-1. **Les couleurs sont une proposition**, pas une reprise de l'existant (impossible de voir
-   les vôtres). Vert-pétrole + terracotta sur fond crème. → voir *Changer les couleurs*.
-2. **Rien n'a été inventé** : ni tarif, ni témoignage, ni diplôme, ni mention légale.
-   Ces emplacements sont préparés et signalés. → voir *À compléter avant mise en ligne*.
+> Pensez à les compresser avant (par ex. [squoosh.app](https://squoosh.app)) :
+> visez moins de 300 Ko par photo, sinon le site ralentit et le SEO en pâtit.
+
+### 2. Le vrai logo
+
+`assets/img/embleme.svg` et `assets/img/logo.svg` sont des **redessins approximatifs**
+à partir de l'image que vous m'avez montrée — je n'ai pas pu récupérer le fichier
+original. Déposez votre vrai logo (SVG de préférence, sinon PNG à fond transparent)
+sous ces deux noms et il remplacera le mien partout.
+
+### 3. Vos avis Google
+
+Je n'ai pas accès à Google depuis cet environnement, et **je n'invente pas d'avis**.
+Les sections « Avis Google » de l'accueil et du tunnel sont écrites et stylées, mais
+mises en commentaire dans le HTML.
+
+Copiez-collez-moi 3 avis réels (texte + prénom) et je les intègre — ou faites-le
+vous-même en retirant les balises `<!-- -->` autour de la section.
+
+*Publier de faux avis est interdit (art. L121-4 du Code de la consommation).*
+
+### 4. Les mentions légales
+
+Champs surlignés en orange dans `/mentions-legales/` et `/confidentialite/` :
+SIRET, forme juridique, e-mail, diplôme, hébergeur. **Obligatoire avant publication.**
+
+### 5. Vos tarifs et votre parcours
+
+Emplacements prêts, en commentaire dans `/infos-pratiques/` et `/le-cabinet/`.
+Rien n'a été inventé.
+
+---
+
+## Comment me donner accès à votre site actuel
+
+Les deux sites sont **bloqués par la politique réseau** de cet environnement (erreur
+403 du proxy de sortie) — c'est aussi le cas de Google, de PagesJaunes et de
+`mbesse.fr`. Trois solutions, de la plus simple à la plus complète :
+
+1. **Copier-coller.** Ouvrez chaque page de votre WordPress, sélectionnez tout,
+   collez-le dans la conversation. C'est le plus rapide et ça suffit dans 90 % des cas.
+2. **Captures d'écran.** Comme vous l'avez fait pour le logo et les photos : idéal
+   pour que je reprenne des couleurs ou une mise en page précise.
+3. **Ouvrir le réseau.** Dans les réglages de votre environnement Claude Code,
+   la politique réseau détermine les domaines que je peux atteindre. En autorisant
+   `nuneschiropratique.fr` et `bilanchiropratique.netlify.app`, je pourrai les lire
+   directement. Voir la
+   [documentation Claude Code](https://code.claude.com/docs/en/claude-code-on-the-web).
 
 ---
 
 ## Structure
 
 ```
-/                        Accueil — vitrine
+/                        Accueil
 /la-chiropratique/       La discipline expliquée
 /le-cabinet/             Le praticien et le lieu
-/infos-pratiques/        Horaires, tarifs, accès, formulaire de contact
-/mentions-legales/       Obligatoire
-/confidentialite/        RGPD
+/infos-pratiques/        Horaires, tarifs, accès, contact
+/mentions-legales/  /confidentialite/
+/merci-contact/  404.html
 
-/bilan/                  ⚠ TUNNEL DE VENTE — page publicitaire, non listée
-/bilan/merci/            Confirmation après envoi du formulaire
-/merci-contact/          Confirmation du formulaire de contact
-/404.html                Page d'erreur
+/bilan/                  ⚠ TUNNEL — page publicitaire, non listée
+/bilan/merci/            Confirmation + emplacement du pixel de conversion
 
-assets/css/site.css      Design system — toutes les couleurs sont ici
-assets/css/funnel.css    Styles propres au tunnel
-assets/js/site.js        Menu mobile, FAQ, animations, CTA collant
-netlify.toml             Déploiement, en-têtes, redirections
-robots.txt, sitemap.xml  Référencement
+assets/css/site.css      Design system — les 4 couleurs de marque sont en haut
+assets/css/funnel.css    Styles du tunnel
+assets/js/site.js        Interactions (~10 Ko)
+assets/fonts/            Cormorant Garamond + Inter, auto-hébergées (86 Ko)
+assets/img/              Logo, emblème, favicon + VOS PHOTOS à déposer
+netlify.toml             Déploiement, en-têtes de sécurité, redirections
 ```
 
 ---
 
-## Le tunnel de vente est cloisonné
+## Le tunnel reste cloisonné
 
-C'était votre demande : les visiteurs du site vitrine ne doivent pas pouvoir tomber sur
-le tunnel. **Quatre verrous** ont été posés :
+| Verrou | Où |
+|---|---|
+| Aucun lien entrant | toutes les pages vitrine |
+| `<meta name="robots" content="noindex">` | pages `/bilan/` |
+| `Disallow: /bilan/` | `robots.txt` |
+| En-tête `X-Robots-Tag` | `netlify.toml` (verrou serveur) |
+| Absent du `sitemap.xml` | — |
 
-| Verrou | Où | Effet |
-|---|---|---|
-| Aucun lien entrant | toutes les pages vitrine | `/bilan/` n'apparaît ni dans le menu, ni en pied de page, ni dans le corps du site |
-| `<meta name="robots" content="noindex">` | `bilan/index.html`, `bilan/merci/index.html` | désindexation par les moteurs |
-| `Disallow: /bilan/` | `robots.txt` | exclusion du crawl |
-| En-tête `X-Robots-Tag: noindex` | `netlify.toml` | verrou côté serveur, actif même si l'URL fuite |
+Le tunnel n'a pas de menu. Seule exception, imposée par la loi : les liens mentions
+légales / confidentialité en pied de page.
 
-Le tunnel est également absent du `sitemap.xml`, et **n'a pas de menu** : aucun lien ne
-ramène vers la vitrine, pour que le visiteur venu de la publicité reste dans le parcours.
-
-> Seule exception, obligatoire : les liens « Mentions légales » et « Confidentialité » en
-> pied de page du tunnel. La loi impose qu'ils soient accessibles depuis toute page.
-
-**URL à mettre dans vos annonces :**
-
-```
-https://nuneschiropratique.fr/bilan/
-```
-
-Ajoutez un paramètre pour tracer la campagne, il est enregistré avec chaque demande :
-
-```
-https://nuneschiropratique.fr/bilan/?src=meta-octobre
-```
+**URL pour vos annonces :** `https://nuneschiropratique.fr/bilan/?src=meta-octobre`
+Le paramètre `src` est enregistré avec chaque demande : vous saurez quelle campagne
+a généré quel rendez-vous.
 
 ---
 
-## Changer les couleurs
+## Horaires
 
-Toute l'identité tient dans **4 variables**, en haut de `assets/css/site.css` :
+Renseignés partout (page infos, pied de page, tunnel, et données structurées Google) :
+
+| Jour | Horaires |
+|---|---|
+| Lundi, mardi, jeudi | 11h – 14h et 17h – 20h |
+| Mercredi | 10h – 12h |
+| Vendredi, samedi, dimanche | Fermé |
+
+Le jour en cours est automatiquement mis en évidence dans le tableau.
+
+---
+
+## Identité visuelle
+
+Reprise de votre logo et de vos photos : **teal pétrole sur blanc**, serif classique,
+beaucoup de blanc. Les 4 couleurs sont en haut de `assets/css/site.css` :
 
 ```css
-:root {
-  --brand-900: #10332E;   /* vert profond : aplats sombres, pied de page */
-  --brand-700: #1A5B50;   /* vert principal : titres, boutons, liens     */
-  --brand-500: #2B8A78;   /* vert clair : survols, accents               */
-  --accent-500: #C2703F;  /* terracotta : boutons du tunnel, détails     */
-}
+--brand-900: #1B4B48;   /* teal profond : aplats, pied de page */
+--brand-700: #2A6360;   /* teal du logo : titres, boutons      */
+--brand-500: #4E8C87;   /* teal clair : survols, traits        */
+--brand-300: #9BBCB8;
 ```
 
-Modifiez ces 4 lignes et **tout le site suit** — vitrine et tunnel, boutons, icônes,
-dégradés, pied de page. Pensez à mettre à jour `--brand-100`, `--brand-050` et
-`--accent-100` juste en dessous (versions très claires des mêmes teintes), ainsi que la
-balise `<meta name="theme-color">` dans chaque page.
-
-*Envoyez-moi vos couleurs actuelles (ou une capture du site WordPress) et je les applique.*
+Typographie : **Cormorant Garamond** pour les titres (proche du serif de votre logo)
+et **Inter** pour le texte. Les deux sont dans `assets/fonts/` — aucune requête vers
+Google Fonts, donc rien à déclarer au RGPD.
 
 ---
 
-## À compléter avant mise en ligne
+## Côté technique
 
-### 1. Obligatoire (juridique)
+Ce qui tourne, en JavaScript natif, sans aucune bibliothèque :
 
-Les champs surlignés en orange dans `/mentions-legales/` et `/confidentialite/` :
-SIRET, forme juridique, e-mail de contact, diplôme, hébergeur, date de mise à jour.
-**Le site ne doit pas être publié sans ces informations** (loi LCEN du 21 juin 2004).
+- écran de chargement avec animation du logo, puis transition au voile entre les pages ;
+- titres révélés mot par mot, apparitions en cascade au défilement ;
+- parallaxe sur les photos, volet qui se retire au passage ;
+- en-tête qui se masque en descendant, réapparaît en remontant ;
+- barre de progression de lecture, curseur personnalisé, boutons magnétiques ;
+- compteur animé, bandeau défilant, accordéon FAQ ;
+- CTA collant sur mobile dans le tunnel, qui s'efface quand le formulaire est à l'écran.
 
-### 2. Photos
+**Tout est désactivé si le visiteur a activé « réduire les animations »**, et le site
+reste entièrement lisible et navigable sans JavaScript.
 
-7 emplacements sont matérialisés par un bloc dégradé « Emplacement photo ». Chacun est
-précédé d'un commentaire HTML indiquant le format attendu :
+---
 
-| Page | Photo | Format |
-|---|---|---|
-| Accueil | portrait praticien | 4/5 — 1000×1250 |
-| Accueil | salle de soin | 1/1 — 1000×1000 |
-| Le cabinet | portrait praticien | 4/5 — 1000×1250 |
-| Le cabinet | salle de soin | 3/2 — 1200×800 |
-| Le cabinet | accueil / salle d'attente | 3/2 — 1200×800 |
-| Tunnel | praticien en consultation | 16/10 — 1200×750 |
-| Tunnel | portrait praticien | 1/1 — 900×900 |
+## SEO
 
-Déposez les fichiers dans `assets/img/` et remplacez le bloc `<div class="ph">…</div>`
-par la balise `<img>` donnée en commentaire juste au-dessus.
+- Titres et méta-descriptions uniques et ciblés sur chaque page.
+- Données structurées : `Chiropractic` (adresse, horaires réels, géolocalisation,
+  zone desservie, moyens de paiement, langues, action de réservation), `Person`,
+  `WebSite`, `BreadcrumbList` et `FAQPage`.
+- Balises canoniques, Open Graph, Twitter Card, métadonnées géographiques.
+- Images avec `alt` descriptif, dimensions déclarées, chargement différé.
+- Polices préchargées, cache long sur les assets, aucun script tiers → site très rapide.
+- `sitemap.xml` avec dates, `robots.txt`, redirections 301 depuis les anciennes URL.
 
-> Sur le tunnel, une vraie photo de vous augmente nettement la conversion. C'est le
-> changement le plus rentable de cette liste.
+**Ce qui reste à faire pour le référencement local** (le plus rentable pour un cabinet) :
 
-### 3. Témoignages
-
-Les deux sections « témoignages » (accueil et tunnel) sont **écrites mais désactivées**
-(mises en commentaire) : aucun avis n'a été inventé. Collez-y 3 avis réels — Doctolib,
-Google, e-mail patient — prénom seul et avec l'accord de la personne, puis retirez les
-balises de commentaire.
-
-*Publier de faux avis est interdit (art. L121-4 du Code de la consommation).*
-
-### 4. Tarifs
-
-`/infos-pratiques/` renvoie pour l'instant vers l'agenda en ligne et l'affichage au
-cabinet. Un tableau prêt à l'emploi est en commentaire dans la page : renseignez vos
-montants et remplacez le paragraphe.
-
-### 5. Votre parcours
-
-Volontairement vide sur `/le-cabinet/` et sur le tunnel : école, année de diplôme,
-formations. C'est l'élément de réassurance le plus efficace — mais il doit être exact.
-
-### 6. L'offre du tunnel
-
-Le bandeau orange en haut de `/bilan/` et le bloc prix de la carte de réservation doivent
-**reprendre mot pour mot le message de vos annonces**. Un décalage entre la publicité et
-la page fait chuter la conversion. Le bloc prix est prêt, en commentaire, dans
-`bilan/index.html`.
+1. Revendiquer et compléter la **fiche Google Business Profile** — c'est elle qui
+   fait 80 % du travail sur « chiropracteur Toulouse ».
+2. Vérifier que les horaires y sont identiques à ceux du site.
+3. Compléter les **redirections 301** dans `netlify.toml` avec vos vraies anciennes
+   URL WordPress (Google Search Console → Pages, ou `site:nuneschiropratique.fr`).
+4. Déposer le `sitemap.xml` dans la Search Console après la mise en ligne.
 
 ---
 
 ## Mise en ligne (Netlify)
 
-Vous utilisez déjà Netlify pour le tunnel, autant y rester.
-
-1. **Netlify → Add new site → Import from Git**, sélectionnez ce dépôt.
+1. **Add new site → Import from Git**, sélectionnez ce dépôt.
 2. Build command : *(vide)* · Publish directory : `.` — déjà dans `netlify.toml`.
-3. **Domain settings** → ajoutez `nuneschiropratique.fr` et `www.nuneschiropratique.fr`,
-   puis suivez les instructions DNS. Le certificat HTTPS est automatique.
-4. **Forms** : activés d'office. Les demandes arrivent dans l'onglet *Forms*.
-   → **Form notifications** : ajoutez une notification e-mail, sinon vous ne serez pas
-   prévenu des nouvelles demandes.
+3. **Domain settings** → ajoutez `nuneschiropratique.fr` et `www`. HTTPS automatique.
+4. **Forms** → activés d'office. **Ajoutez une notification e-mail**, sinon vous ne
+   serez pas prévenu des nouvelles demandes.
 
-### Avant de basculer le DNS
+Si des publicités pointent encore vers `bilanchiropratique.netlify.app`, gardez ce
+site actif et redirigez-le vers `https://nuneschiropratique.fr/bilan/`.
 
-Le site WordPress actuel a des URL que Google connaît. `netlify.toml` contient déjà des
-redirections 301 (`/contact`, `/tarifs`, `/a-propos`…) **à vérifier et compléter** avec
-vos véritables anciennes adresses — sinon vous perdez le référencement acquis.
-
-Pour les lister : Google Search Console → *Pages*, ou `site:nuneschiropratique.fr`
-dans Google.
-
-### L'ancien domaine du tunnel
-
-Si des publicités pointent encore vers `bilanchiropratique.netlify.app`, gardez ce site
-Netlify actif et ajoutez-y une redirection vers `https://nuneschiropratique.fr/bilan/`
-le temps de mettre vos annonces à jour.
-
----
-
-## Aperçu en local
-
-Les liens sont absolus (`/le-cabinet/`), donc ouvrir les fichiers par double-clic ne
-fonctionne pas. Lancez un petit serveur :
+### Aperçu en local
 
 ```bash
-python3 -m http.server 8000
-# puis http://localhost:8000
+python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ---
 
-## Suivi de conversion et RGPD
+## RGPD
 
-Le site, tel qu'il est livré, **ne dépose aucun cookie** : pas de Google Analytics, pas de
-police externe, pas de carte intégrée, pas de bouton de réseau social. Aucune bannière de
-consentement n'est donc nécessaire, et la page Confidentialité le reflète.
+Le site ne dépose **aucun cookie** : pas d'analytics, pas de police externe, pas de
+carte intégrée, pas de bouton social. Aucune bannière de consentement nécessaire.
 
-Si vous ajoutez un **pixel Meta ou un tag Google Ads** (l'endroit prévu est indiqué en
-commentaire dans `bilan/merci/index.html`, la page qu'atteint un visiteur ayant envoyé le
-formulaire) :
-
-- le traceur ne doit se déclencher **qu'après** consentement explicite du visiteur ;
-- une bannière conforme (accepter / refuser à égalité) devient obligatoire ;
-- `/confidentialite/` doit être complétée ;
-- la règle `Content-Security-Policy` de `netlify.toml` doit être élargie, sinon le
-  navigateur bloquera le script.
+Si vous ajoutez un **pixel Meta ou Google Ads** (emplacement prévu en commentaire dans
+`bilan/merci/index.html`) : consentement préalable obligatoire, bannière conforme,
+page Confidentialité à compléter, et règle `Content-Security-Policy` de `netlify.toml`
+à élargir — sinon le navigateur bloquera le script.
 
 ---
 
-## Accessibilité et qualité
+## Vérifications effectuées
 
-Vérifié au navigateur sur les 10 pages, en 1440 px et 390 px :
-
-- aucune erreur JavaScript, aucune ressource manquante, aucun débordement horizontal ;
-- une seule `<h1>` par page, hiérarchie de titres cohérente, `lang="fr"` ;
-- navigation au clavier avec lien d'évitement et focus visible ;
-- menu mobile et CTA collant testés ;
-- animations désactivées si `prefers-reduced-motion` est actif ;
-- données structurées `schema.org/Chiropractic` (adresse, horaires, téléphone) sur
-  l'accueil, pour l'affichage dans Google.
+Au navigateur, sur les 10 pages, en 1440 / 1024 / 390 / 320 px :
+aucune erreur JavaScript, aucune ressource manquante (hors les 4 photos à déposer),
+aucun débordement horizontal, une seule `<h1>` par page, données structurées valides,
+navigation clavier et menu mobile fonctionnels.
