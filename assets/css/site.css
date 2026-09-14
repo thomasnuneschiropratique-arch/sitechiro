@@ -474,6 +474,7 @@ figcaption { margin-top: .85rem; font-size: var(--step--1); color: var(--ink-500
 
 .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
 .checks li { margin: 0; display: flex; gap: .9rem; align-items: flex-start; }
+.checks li > span { min-width: 0; overflow-wrap: anywhere; }  /* email/telephone longs : ne force pas le debordement */
 .checks svg { width: 1.2rem; height: 1.2rem; flex: none; margin-top: .3rem; color: var(--brand-500); }
 .section--brand .checks svg { color: var(--brand-300); }
 
@@ -537,7 +538,7 @@ figcaption { margin-top: .85rem; font-size: var(--step--1); color: var(--ink-500
    Tableaux
    ========================================================================== */
 
-.table-wrap { overflow-x: auto; }
+.table-wrap { overflow-x: auto; max-width: 100%; }
 table { width: 100%; border-collapse: collapse; font-size: .97rem; min-width: 17rem; }
 caption { text-align: left; padding-bottom: 1rem; font-weight: 600; color: var(--brand-900); }
 th, td { padding: 1.05rem 0; text-align: left; border-top: 1px solid var(--line); }
@@ -601,6 +602,46 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--b
 .marquee span::after { content: "◆"; font-size: .45em; color: var(--brand-500); }
 @keyframes slide { to { transform: translateX(-50%); } }
 .marquee:hover .marquee__track { animation-play-state: paused; }
+
+/* ==========================================================================
+   Citation (bas de page editoriale)
+   ========================================================================== */
+
+.pullquote { text-align: center; padding-block: clamp(2.5rem, 6vw, 4rem); }
+.pullquote blockquote {
+  margin: 0 auto; max-width: 38rem;
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem); line-height: 1.4;
+  color: var(--brand-900);
+}
+.pullquote blockquote::before { content: "\201C"; }
+.pullquote blockquote::after { content: "\201D"; }
+.pullquote cite {
+  display: block; margin-top: 1.1rem; font-style: normal; font-family: var(--font-body);
+  font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--brand-500);
+}
+
+/* ==========================================================================
+   Reservation integree (page /reserver/)
+   ========================================================================== */
+
+.booking-embed {
+  position: relative; width: 100%;
+  background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.booking-embed iframe {
+  display: block; width: 100%; border: 0;
+  height: min(1500px, 150vh);
+}
+.booking-fallback {
+  display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; justify-content: space-between;
+  margin-top: 1rem; padding: 1rem 1.4rem;
+  background: var(--brand-050); border: 1px solid var(--brand-100); border-radius: var(--radius);
+  font-size: .92rem; color: var(--ink-700);
+}
+.booking-fallback a { font-weight: 600; }  /* le nowrap forcait un debordement horizontal sur petit ecran */
 
 /* ==========================================================================
    Pied de page

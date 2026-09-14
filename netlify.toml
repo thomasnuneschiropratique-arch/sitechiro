@@ -35,7 +35,9 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
     # Le site n'utilise ni CDN, ni police externe, ni script tiers.
     # Si vous ajoutez un pixel publicitaire, il faudra elargir cette regle.
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'"
+    # frame-src autorise l'integration du calendrier PracticeHub sur /reserver/.
+    # Si vous changez de prestataire de reservation, mettez cette ligne a jour.
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; form-action 'self' https://thomasnuneschiropratique.neptune.practicehub.io; frame-src https://thomasnuneschiropratique.neptune.practicehub.io; frame-ancestors 'self'; base-uri 'self'"
 
 # Mise en cache longue des fichiers statiques (CSS, JS, images)
 [[headers]]
